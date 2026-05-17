@@ -1,0 +1,9 @@
+streamlit>=1.57.0
+langgraph>=1.1.10
+langchain-core>=1.2.11
+langchain-google-genai>=4.0.0
+python-dotenv>=1.0.0
+arxiv>=2.2.0
+pypdf>=5.0.0
+reportlab>=4.5.1
+typing_extensions>=4.12.0
