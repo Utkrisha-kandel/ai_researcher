@@ -1,51 +1,48 @@
-# 🔬 AI Researcher
+# AI Researcher
 
-An AI-powered research agent that searches academic papers on ArXiv, reads and analyzes them, and writes new research papers — complete with LaTeX-rendered PDFs. Built with LangGraph, Google Gemini, and Streamlit.
+A research agent that finds papers on ArXiv, reads them, and writes new ones — exported as a PDF. You chat with it, pick a topic, and it does the rest.
 
-## How it works
+---
 
-1. **Explore** — Discuss a research topic and search ArXiv for recent papers
-2. **Read** — Fetch and analyze the full content of papers you select
-3. **Ideate** — Identify promising future research directions from the literature
-4. **Write** — Draft a new research paper with mathematical equations
-5. **Export** — Render the paper as a LaTeX PDF
+## What it does
 
-## Project structure
+You tell it what field you want to explore. It searches ArXiv, summarizes what it finds, and lets you pick a paper to go deeper on. Once you've read through the ideas together, you pick a direction and it writes a full research paper — with equations — and exports it as a PDF.
 
-\```
-ai-researcher/
-├── ai_researcher.py    # LangGraph agent + graph definition
-├── frontend.py         # Streamlit chat UI
-├── arxiv_tool.py       # ArXiv search tool
-├── read_pdf.py         # PDF reading utility
-├── write_pdf.py        # LaTeX PDF generation
-├── .env                # API keys (not committed)
-└── output/             # Generated papers (not committed)
-\```
+---
 
-## Getting started
+## Stack
 
-\```bash
+- **LangGraph** — agent logic
+- **Gemini 2.5 Flash** — the LLM
+- **Streamlit** — the UI
+- **ArXiv API** — paper search
+- **ReportLab** — PDF export
+
+---
+
+## Setup
+
+```bash
 git clone https://github.com/Utkrisha-kandel/ai_researcher.git
 cd ai_researcher
 pip install -r requirements.txt
-\```
+```
 
-Create a `.env` file:
-\```
-GEMINI_API=your_google_gemini_api_key
-\```
+Add a `.env` file:
+Get a free key at [aistudio.google.com](https://aistudio.google.com).
 
 Then run:
-\```bash
+
+```bash
 streamlit run frontend.py
-\```
+```
 
-## Tech stack
+---
 
-- [LangGraph](https://github.com/langchain-ai/langgraph) — agent orchestration
-- [Google Gemini 2.5 Flash](https://deepmind.google/technologies/gemini/) — LLM backbone
-- [Streamlit](https://streamlit.io) — chat UI
-- [ArXiv API](https://arxiv.org/help/api) — academic paper search
-- [ReportLab](https://www.reportlab.com) — PDF generation
-
+## Project files
+├── ai_researcher.py   # agent + graph
+├── frontend.py        # streamlit UI
+├── arxiv_tool.py      # arxiv search
+├── read_pdf.py        # pdf reader
+├── write_pdf.py       # pdf writer
+└── output/            # generated papers
