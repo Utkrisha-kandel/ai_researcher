@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment & secrets
+.env
+*.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Output files (generated PDFs/text)
+output/
+
+# Conda / virtualenv
+env/
+venv/
+.conda/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# Logs
+*.log
